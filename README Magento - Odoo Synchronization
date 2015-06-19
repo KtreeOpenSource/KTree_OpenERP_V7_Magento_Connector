@@ -1,0 +1,52 @@
+ktree_magento_connector version 1.0  24/03/2015
+
+GENERAL USAGE NOTES :
+
+- This module is compatible with OpenERP version 7.
+
+- Module is tested with the OpenERP Version 7 and Magento ver. 1.9.0.1
+
+- The ktree_magento_connector module is build with the help of the source codes available in lunchpad, github.
+
+- The KTree Magento Connector for Odoo 8 will be based on the OpenERP Magento Connector for OpenERP 7 and will have the following core features:
+
+  Compatible with Odoo 8 and the Magento versions 1.7 or later
+  Synchronization of customers, products, sales orders, invoices, payment status, product stock, Delivery status;
+  Magento import/Export products supported: simple, bundle products.
+  
+- This module is having a dependancy on product_images_olbs which is available on odoo apps.
+
+- Magento side we have created a new custom API which is more flexible for synchronization process between the magento and odoo..
+
+- Magento custome API Ktree_Customapi-0.1.0.tgz which needs to be installed at magento side before proceeding for Synchronization.
+
+- Place the ktree_magento_connector module in odoo 8 addons and install it.
+
+- create a API user at magento with all role based access rights.
+
+- Configure the magento api details on odoo under the menu called  Magento--> Magento settings.
+
+ABOUT :
+
+Odoo is # 1 opensource ecommerce/ERP application software that supports integration with numerous other software applications. 
+Odoo is suite of opensource Business Apps which include e-commerce,CRM,Purchase , Sales ,Warehouse ,Accounting ,Warehouse ,Project Management , Marketing , Employee Management.
+Whenever an ERP is intended to associate with the Companys Web Site for E- Commerce perspective, Magento is integrated with Odoo, where, Magento is a powerful, out-of the-box, rich in features, e-commerce tool used for E-Commerce site development. Thus integration of Odoo with Magento provides multi functional capability to the site with robust Shopping cart experience wherein, Magento enacts efficient Front end platform for the web shop while Odoo operates as perfect back office Application. Open ERP integration with Magento supports all business functions required by an enterprise.
+
+KTree avails best-of-breed solutions to integrate Odoo and Magento. Our expertised team is specialized in Open ERP, has experience in integrating services with web applications and also has demonstrative understanding of the underlying technologies resulting in excellent business management.
+
+The module KTree developed has the following features:
+
+Tested on the Odoo/OpenERP version 7 and Magento ver. 1.9.0.1
+
+Magento to Odoo sync:
+Magento Order will be created as a new Sales quotation/order in Odoo automatically.
+Customer/s created in Magento will get imported to Odoo.
+Product/s created in Magento will be imported to Oooo.
+Any update to Product attributes in Magento will get updated to Odoo.
+
+Odoo to Magento sync:
+Odoo will host as a stock master and will continuously update Magento Stock.
+Real stock of every product will be updated from Odoo to Magento. Quantity in hand in Odoo will be synced to Magento based on the Sales and purchases.
+Any updates to Customer in Odoo will get synced back to Magento
+Any updates to Product in Odoo will get synced back to Mage
+

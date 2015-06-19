@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Ktree_Customapi</name>
+    <version>0.1.0</version>
+    <stability>devel</stability>
+    <license>AFL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Ktree module for custom api</summary>
+    <description>Ktree module for custom api</description>
+    <notes>Ktree module for custom api</notes>
+    <authors><author><name>KTree</name><user>Ktree</user><email>alma.rajkumar@goktree.com</email></author></authors>
+    <date>2013-04-29</date>
+    <time>10:55:52</time>
+    <contents><target name="magelocal"><dir name="Ktree"><dir name="Customapi"><dir name="Helper"><file name="Data.php" hash="9f21c309fc8867a842b1c4d3f6670046"/></dir><dir name="Model"><dir name="Category"><dir name="Api"><file name="V2.php" hash="661c8840e732adce9266d4aab03d402a"/></dir><file name="Api.php" hash="0dfaf7fd48b2ae96fb6ea581c8bcebf2"/></dir><dir name="Core"><dir name="Api"><file name="V2.php" hash="bf3cfb4fd7c2252b5d2f6a5eaf085507"/></dir><file name="Api.php" hash="d9fff6c118fb4d0528f8ebe952a078ed"/></dir><dir name="Customer"><dir name="Api"><file name="V2.php" hash="82ec30d9ae8d9c8559e87e948c3c5fc8"/></dir><file name="Api.php" hash="228d8f49a3c903830ec89248ddbb1391"/></dir><dir name="Order"><dir name="Api"><file name="V2.php" hash="0e5efb1254b19a075d2e224607201f0b"/></dir><file name="Api.php" hash="a5c39eedc5bf14175240e9b51f8c742a"/><dir name="Invoice"><dir name="Api"><file name="V2.php" hash="d5c542f5918cdcc428b42eb69c42326f"/></dir><file name="Api.php" hash="0360cae634dcbe74d64696de622fcf36"/></dir></dir><dir name="Product"><dir name="Api"><file name="V2.php" hash="9f3cb3d1e9be64ef97b0084e80b22d6b"/></dir><file name="Api.php" hash="6471340d88ee1f42bcf2b46d1a4f98d5"/></dir></dir><dir name="etc"><file name="api.xml" hash="bc352a05f57ed577380b61071174daf3"/><file name="config.xml" hash="d7a668eb27f20b9c8678a95ef98f90e1"/><file name="wsdl working" hash="6999e874fb3f08bacd21eb8df55150cd"/><file name="wsdl123.xml" hash="b6c00f0544df31b977789ad87a8f73eb"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Ktree_Customapi.xml" hash="d73a2387bd4ebf07c509ba9a4d4c60d2"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.0.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ktree_Customapi>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ktree_Customapi>
+    </modules>
+</config>

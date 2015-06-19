@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns:typens="urn:{{var wsdl.name}}" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/"
+    name="{{var wsdl.name}}" targetNamespace="urn:{{var wsdl.name}}">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Magento">
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/" schemaLocation="http://schemas.xmlsoap.org/soap/encoding/" />
+			<complexType name="catalogCategoryEntity">
+                <all>
+                    <element name="category_id" type="xsd:int"/>
+                    <element name="category_name" type="xsd:string"/>
+                </all>
+            </complexType>
+			<complexType name="catalogProductKtreebundleEntity">
+                <all>
+                   <element name="main_product" type="typens:ArrayOfString" minOccurs="0"/>
+				   <element name="associated_products" type="typens:ArrayOfString" minOccurs="0"/>
+                </all>
+            </complexType>
+			<complexType name="catalogProductItemslistEntity">
+                <all>
+                    <element name="products" type="typens:ArrayOfString" minOccurs="0"/>
+                </all>
+            </complexType>
+			<complexType name="customerCustomerItemslistEntity">
+                <all>
+                    <element name="customers" type="typens:ArrayOfString" minOccurs="0"/>
+                </all>
+            </complexType>
+			<complexType name="salesOrderItemslistEntity">
+                <all>
+                    <element name="orders" type="typens:ArrayOfString" minOccurs="0"/>
+                </all>
+            </complexType>
+        </schema>
+    </types>
+    <message name="catalogCategoryGetIDRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="category_name" type="xsd:string" />
+    </message>
+    <message name="catalogCategoryGetIDResponse">
+        <part name="result" type="typens:catalogCategoryEntity" />
+    </message>
+	<message name="catalogProductKtreebundleRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="productId" type="xsd:string" />
+    </message>
+    <message name="catalogProductKtreebundleResponse">
+        <part name="result" type="catalogProductKtreebundleEntity" />
+    </message>
+	<message name="catalogProductItemslistRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="entityIds" type="typens:ArrayOfString" />
+    </message>
+    <message name="catalogProductItemslistResponse">
+        <part name="result" type="catalogProductItemslistEntity" />
+    </message>
+	<message name="customerCustomerItemslistRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="customerIds" type="typens:ArrayOfString" />
+    </message>
+    <message name="customerCustomerItemslistResponse">
+        <part name="result" type="customerCustomerItemslistEntity" />
+    </message>
+	<message name="salesOrderItemslistRequest">
+        <part name="sessionId" type="xsd:string"/>
+        <part name="incrementIds" type="typens:ArrayOfString" />
+    </message>
+    <message name="salesOrderItemslistResponse">
+        <part name="result" type="salesOrderItemslistEntity" />
+    </message>
+    <portType name="{{var wsdl.handler}}PortType">
+        <operation name="catalogCategoryGetID">
+            <documentation>this is an example of api method...</documentation>
+            <input message="typens:catalogCategoryGetIDRequest" />
+            <output message="typens:catalogCategoryGetIDResponse" />
+        </operation>
+		<operation name="catalogProductKtreebundle">
+            <documentation>this is an example of api method...</documentation>
+            <input message="typens:catalogProductKtreebundleRequest" />
+            <output message="typens:catalogProductKtreebundleResponse" />
+        </operation>
+		<operation name="catalogProductItemslist">
+            <documentation>this is an example of api method...</documentation>
+            <input message="typens:catalogProductItemslistRequest" />
+            <output message="typens:catalogProductItemslistResponse" />
+        </operation>
+		<operation name="customerCustomerItemslist">
+            <documentation>Ktree api for customers information</documentation>
+            <input message="typens:customerCustomerItemslistRequest" />
+            <output message="typens:customerCustomerItemslistResponse" />
+        </operation>
+		<operation name="salesOrderItemslist">
+            <documentation>Ktree api for Orders information</documentation>
+            <input message="typens:salesOrderItemslistRequest" />
+            <output message="typens:salesOrderItemslistResponse" />
+        </operation>
+    </portType>
+    <binding name="{{var wsdl.handler}}Binding" type="typens:{{var wsdl.handler}}PortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="catalogCategoryGetID">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+		<operation name="catalogProductKtreebundle">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+		<operation name="catalogProductItemslist">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+		<operation name="customerCustomerItemslist">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+		<operation name="salesOrderItemslist">
+            <soap:operation soapAction="urn:{{var wsdl.handler}}Action" />
+            <input>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:{{var wsdl.name}}" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+    </binding>
+    <service name="{{var wsdl.name}}Service">
+        <port name="{{var wsdl.handler}}Port" binding="typens:{{var wsdl.handler}}Binding">
+            <soap:address location="{{var wsdl.url}}" />
+        </port>
+    </service>
+</definitions> 

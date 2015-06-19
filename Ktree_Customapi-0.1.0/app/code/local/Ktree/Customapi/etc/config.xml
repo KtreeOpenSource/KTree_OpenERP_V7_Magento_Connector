@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Ktree_Customapi><!-- COMPANYNAME_MODULE -->
+			<version>0.1.0</version>
+		</Ktree_Customapi>
+	</modules>
+	<global>
+		<models>
+			<customapi><!-- MODULE, just first letter is lowercased, i.e. module CustomAPI would be placed here as customAPI -->
+				<class>Ktree_Customapi_Model</class>
+			</customapi>
+			<catalog>
+			    <rewrite>
+					<category_api_v2>Ktree_Customapi_Model_Category_Api_V2</category_api_v2>
+					<product_api>Ktree_Customapi_Model_Product_Api</product_api>
+					<product_api_v2>Ktree_Customapi_Model_Product_Api_v2</product_api_v2>
+				</rewrite>
+			</catalog>
+			<customer>
+			    <rewrite>
+					<customer_api>Ktree_Customapi_Model_Customer_Api</customer_api>
+                    <customer_api_v2>Ktree_Customapi_Model_Customer_Api_v2</customer_api_v2>
+				</rewrite>
+			</customer>
+			<sales>
+			    <rewrite>
+					<order_api>Ktree_Customapi_Model_Order_Api</order_api>
+				</rewrite>
+			</sales>
+		</models>
+		<helpers>
+			<customapi>
+				<class>Ktree_Customapi_Helper</class>
+			</customapi>
+		</helpers>
+	</global>
+</config>

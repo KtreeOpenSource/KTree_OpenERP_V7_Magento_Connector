@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+	   <!--	To Add Brand Master Views and Actions   -->
+       <record id="view_product_brand_form" model="ir.ui.view">
+            <field name="name">product_brand_form</field>
+            <field name="model">product.brand</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Product Brand" version="7.0">
+                <sheet>
+                    <group col="6" colspan="4">
+                        <field name="name" required="1"/>
+                        <field name="manufacturer_id" context="{'default_manufacturer':1,'default_supplier':0,'default_customer':0}" domain="[('manufacturer','=',True)]"/>
+                        <label for="discount_factor"/>
+                        <div>
+                         <field name="discount_factor" class="oe_inline"/>%%
+                        </div>
+                        <field name="code"/>
+                        <field name="company_id"/>
+                    </group>
+					<label for="image"/>
+					<field name="image_medium" widget="image" class="oe_avatar oe_left"/>
+					<notebook>
+					<page string="Descriptions">
+						<field name="description"/>
+					</page>
+					</notebook>
+				</sheet>
+                </form>
+            </field>
+          </record>
+
+          <record id="view_product_brand_tree" model="ir.ui.view">
+            <field name="name">product_brand_tree</field>
+            <field name="model">product.brand</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Product Brands">
+                     <field name="name"/>
+                     <field name="manufacturer_id"/>
+                     <field name="discount_factor"/>
+                     <field name="code"/>
+                     <field name="company_id"/>
+                </tree>
+            </field>
+          </record>
+
+         <record id="action_product_brand" model="ir.actions.act_window">
+            <field name="name">Brand</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.brand</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="view_product_brand_tree"/>
+        </record>
+
+       <menuitem id="menu_config_product_brand" action="action_product_brand" parent="product.prod_config_main" sequence="45"/>
+
+
+       <!--	To Add Range Master Views and Actions   -->
+	   <record id="view_product_range_form" model="ir.ui.view">
+            <field name="name">product_range_form</field>
+            <field name="model">product.range</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Product Range" version="7.0">
+			<sheet>
+                    <group col="6" colspan="4">
+                        <field name="name" required="1"/>
+                        <field name="brand_id"/>
+                        <label for="discount_factor"/>
+                        <div>
+                         <field name="discount_factor" class="oe_inline"/>%%
+                        </div>
+                        <field name="code"/>
+                        <field name="company_id"/>
+                    </group>
+					<label for="image"/>
+					<field name="image_medium" widget="image" class="oe_avatar oe_left"/>
+					<notebook>
+					<page string="Descriptions">
+						<field name="description"/>
+					</page>
+					</notebook>
+					</sheet>
+                   </form>
+            </field>
+          </record>
+
+          <record id="view_product_range_tree" model="ir.ui.view">
+            <field name="name">product_range_tree</field>
+            <field name="model">product.range</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Product Ranges">
+                     <field name="name"/>
+                     <field name="brand_id"/>
+                     <field name="discount_factor"/>
+                     <field name="code"/>
+                     <field name="company_id"/>
+                </tree>
+            </field>
+          </record>
+
+         <record id="action_product_range" model="ir.actions.act_window">
+            <field name="name">Range</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.range</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+             <field name="view_id" ref="view_product_range_tree"/>
+        </record>
+
+       <menuitem id="menu_config_product_range" action="action_product_range" parent="product.prod_config_main" sequence="40"/>
+</data>
+</openerp>

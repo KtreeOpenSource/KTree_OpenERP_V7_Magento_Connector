@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<config>
+	<api>
+		<resources>
+			<customapi_core translate="title" module="customapi">
+				<title>Ktree customapi Core API calls</title>
+				<model>customapi/core_api</model>
+				<acl>ktree/customapi</acl>
+				<methods>
+					<getVersion translate="title" module="customapi">
+						<title>Returns version of this API</title>
+						<acl>ktree/customapi/allaccess</acl>
+					</getVersion>
+				</methods>
+			</customapi_core>
+			<customapi_product translate="title" module="customapi">
+				<title>Ktree customapi Product API calls</title>
+				<model>customapi/product_api</model>
+				<acl>ktree/customapi</acl>
+				<methods>
+					<itemslist translate="title" module="customapi">
+						<title>Returns Product list</title>
+						<acl>ktree/customapi/allaccess</acl>
+					</itemslist>
+					<ktreebundle translate="title" module="customapi">
+						<title>Returns Product list</title>
+						<acl>ktree/customapi/allaccess</acl>
+					</ktreebundle>
+				</methods>
+			</customapi_product>
+			<customapi_customer translate="title" module="customapi">
+				<title>Ktree customapi Customer API calls</title>
+				<model>customapi/customer_api</model>
+				<acl>ktree/customapi</acl>
+				<methods>
+					<itemslist translate="title" module="customapi">
+						<title>Returns Customers list</title>
+						<acl>ktree/customapi/allaccess</acl>
+					</itemslist>
+				</methods>
+			</customapi_customer>
+			<customapi_order translate="title" module="customapi">
+				<title>Ktree customapi Sales Order API calls</title>
+				<model>customapi/order_api</model>
+				<acl>ktree/customapi</acl>
+				<methods>
+					<itemslist translate="title" module="customapi">
+						<title>Returns Sales Order list</title>
+						<acl>ktree/customapi/allaccess</acl>
+					</itemslist>
+				</methods>
+			</customapi_order>
+			<customapi_order_invoice translate="title" module="customapi">
+				<title>Ktree customapi Sales Invoice API </title>
+				<model>customapi/order_invoice_api</model>
+				<acl>ktree/customapi</acl>
+				<methods>
+					<create translate="title" module="customapi">
+						<title>Returns Sales Order Invoice id</title>
+						<acl>ktree/customapi/allaccess</acl>
+					</create>
+				</methods>
+				<faults module="customapi">
+                    <not_exists>
+                        <code>100</code>
+                        <message>Requested invoice does not exist.</message>
+                    </not_exists>
+                    <invalid_filter>
+                        <code>101</code>
+                        <message>Invalid filter given. Details in error message.</message>
+                    </invalid_filter>
+                    <data_invalid>
+                        <code>102</code>
+                        <message>Invalid data given. Details in error message.</message>
+                    </data_invalid>
+                    <order_not_exists>
+                        <code>103</code>
+                        <message>Requested order not exists.</message>
+                    </order_not_exists>
+                    <status_not_changed>
+                        <code>104</code>
+                        <message>Invoice status not changed</message>
+                    </status_not_changed>
+                </faults>
+			</customapi_order_invoice>
+			<customapi_category translate="title" module="customapi">
+                <model>ktree_customapi_model_category_api</model>
+                <title>New Category API</title>
+                <methods>
+                    <getID translate="title" module="customapi">
+                        <title>Retrieve Category ID from its name</title>
+                        <acl>catalog/category</acl>
+                    </getID>
+                </methods>
+            </customapi_category>
+		</resources>
+		<v2>
+            <resources_function_prefix>
+				<customapi_category>catalogCategory</customapi_category>
+                <customapi_product>catalogProduct</customapi_product>
+				<customapi_customer>customerCustomer</customapi_customer>
+				<customapi_order>salesOrder</customapi_order>
+				<customapi_order_invoice>salesOrderInvoice</customapi_order_invoice>
+            </resources_function_prefix>
+        </v2>
+		<acl><!-- Access Control List  to our resources, this tree structure is displayed in "Resource Roles" panel when you open role to edit -->
+			<resources>
+				<ktree translate="title" module="customapi">
+					<title>Ktree</title>
+					<sort_order>100</sort_order>
+					<customapi translate="title" module="customapi">
+						<title>Customapi</title>
+						<sort_order>100</sort_order>
+						<allaccess translate="title" module="customapi">
+							<title>Core functionality required by all users.</title>
+							<sort_order>10</sort_order>
+						</allaccess>
+						<owneraccess translate="title" module="customapi">
+							<title>Functions accessible only for owner.</title>
+							<sort_order>50</sort_order>
+						</owneraccess>
+					</customapi>
+				</ktree>
+			</resources>
+		</acl>
+	</api>
+</config>
