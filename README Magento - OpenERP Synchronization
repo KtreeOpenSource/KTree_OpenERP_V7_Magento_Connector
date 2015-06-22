@@ -8,9 +8,9 @@ GENERAL USAGE NOTES :
 
 - The ktree_magento_connector module is build with the help of the source codes available in lunchpad, github.
 
-- The KTree Magento Connector for Odoo 8 will be based on the OpenERP Magento Connector for OpenERP 7 and will have the following core features:
+- The KTree Magento Connector for OpenERP 7 and will have the following core features:
 
-  Compatible with Odoo 8 and the Magento versions 1.7 or later
+  Compatible with Oopenerp 7 and the Magento versions 1.7 or later
   Synchronization of customers, products, sales orders, invoices, payment status, product stock, Delivery status;
   Magento import/Export products supported: simple, bundle products.
   
@@ -20,7 +20,7 @@ GENERAL USAGE NOTES :
 
 - Magento custome API Ktree_Customapi-0.1.0.tgz which needs to be installed at magento side before proceeding for Synchronization.
 
-- Place the ktree_magento_connector module in odoo 8 addons and install it.
+- Place the ktree_magento_connector module in openerp 7 addons and install it.
 
 - create a API user at magento with all role based access rights.
 
